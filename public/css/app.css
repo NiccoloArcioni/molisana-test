@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Teko', sans-serif;
+}
+
+/* general */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.main_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.main_menu nav {
+    text-align: center;
+    width: 85%;
+}
+
+.main_menu ul li {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.main_menu ul li.active,
+.main_menu ul li:hover {
+    background-color: #B3E5FC;
+}
+.main_menu ul li.active > a,
+.main_menu ul li:hover > a {
+    color: #444444;
+}
+
+.main_menu a,
+#search {
+    font-size: 24px;
+    color: #001942;
+    cursor: pointer;
+}
+
+/* home */
+.banner {
+    width: 100vw;
+    height: auto;
+    display: flex;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+.articles_container {
+    width: 100vw;
+    display: flex;
+    cursor: pointer;
+}
+.articles_container .panel {
+    width: 50%;
+    position: relative;
+}
+.panel img {
+    width: 100%;
+    height: 100%;
+}
+.panel.articles_flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.panel .panel_articles_4 {
+    width: 50%;
+    height: 50%;
+    position: relative;
+}
+
+.article_layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    background-color: #001942;
+    color: #fff;
+    opacity: 0;
+    transition: .35s ease-in-out;
+    text-align: center;
+}
+.article_layover svg {
+    width: 60px;
+    height: 60px;
+    fill: #fff;
+}
+.article_layover h3 {
+    font-size: 35px;
+    font-family: 'serif';
+}
+.panel:hover > .article_layover ,
+.panel_articles_4:hover > .article_layover{
+    opacity: 0.8;
+}
+
+
+/* prodotti */
+.card_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    background-color: #DAEDF3;
+}
+.card {
+    width: calc(100% / 3);
+    position: relative;
+    overflow: hidden;
+}
+.card:hover > img {
+    transform: scale(1.15);
+}
+.card:hover > .layover {
+    opacity: .8;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    transition: all .35s ease-in-out;
+}
+.card .layover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #444444;
+    background-color: #fff;
+    transition: opacity 0.25s ease-in-out;
+    opacity: 0;
+} 
+.layover h3::after {
+    display: block;
+    content: "";
+    position: relative;
+    left: 0;
+    bottom: 10px;
+    height: 1px;
+    width: 15px;
+    border-bottom: 3px solid black;
+    margin: 0 auto;
+    padding: 4px 0px;
+}
+.layover a {
+    width: 100%;
+    height: 100%;
+}
+.card .mk-svg-icon {
+    fill: #444444;
+}
+
+/* news */
+.news_title {
+    width: 100vw;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    background-image: linear-gradient(to bottom right,#000149 0%, #23556d 100%);
+}
+.news_title h2 {
+    letter-spacing: 2px;
+}
+
+#news .card img {
+    filter: brightness(.4);
+}
+
+#news .card:hover > img {
+    transform: scale(1);
+    filter: brightness(0.6);
+}
+
+.news_overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+.news_overlay .date {
+    font-size: 24px;
+}
+.news_overlay p {
+    margin: 60px 0;
+    font-size: 28px;
+}
+.news_overlay .btn {
+    padding: 5px 20px;
+    border: 2px solid #fff;
+}
+
+/* footer */
+footer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url('https://www.lamolisana.it/wp-content/uploads/2020/06/footer-montagne-bottom.jpg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.footer_container {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+.footer_container section {
+    width: calc(100% / 4);
+    padding: 20px;
+}
+.footer_container a,
+.footer_container p {
+    color: grey;
+}
+.footer_container li a,
+.footer_container p {
+    font-family: 'Open Sans', sans-serif;
+}
+.footer_container h2,
+.footer_container h2:hover > a,
+.contact_paragraph a:hover {
+    color: #001942;
+}
+.footer_container p {
+    font-size: 12px;
+}
+
+.footer_container ul.chevron_right li::before{
+    content: '\00BB';
+    color: grey;
+    margin-right: 5px;
+}
